@@ -6,10 +6,8 @@ web3 = Web3(Web3.HTTPProvider(infura_url))
 count = 0
 count2 = 0
 suma = 0
-# Открываем файл с адресами
 with open('adresses.txt', 'r') as file:
     addresses = file.read().splitlines()
-# Итерируемся по адресам и получаем баланс для каждого
 for address in addresses:
     checksum_address = web3.to_checksum_address(address)
     balance = web3.eth.get_balance(checksum_address)
